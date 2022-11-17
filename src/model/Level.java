@@ -38,6 +38,15 @@ public class Level {
 		}
 	}
 	
+	/**
+	 * @param VERTICAL_RESOLUTION
+	 * @param HORIZONTAL_RESOLUTION
+	 * @param nameId
+	 * @param type
+	 * @param lostPoints
+	 * @param winPoints
+	 * @return
+	 */
 	public String registerEnemy(int VERTICAL_RESOLUTION, int HORIZONTAL_RESOLUTION, String nameId, int type, double lostPoints, double winPoints){
 		String msj = "Cantidad maxima de enemigos alcanzada";
 		boolean added = false;
@@ -52,6 +61,14 @@ public class Level {
 		return msj;
 	}
 
+	/**
+	 * @param VERTICAL_RESOLUTION
+	 * @param HORIZONTAL_RESOLUTION
+	 * @param nameId
+	 * @param url
+	 * @param scoreGranted
+	 * @return
+	 */
 	public String registerTreasure(int VERTICAL_RESOLUTION, int HORIZONTAL_RESOLUTION, String nameId, String url, double scoreGranted){
 		String msj = "Cantidad maxima de tesoros alcanzada";
 		boolean added = false;
@@ -66,6 +83,10 @@ public class Level {
 		return msj;
 	}
 
+	/**
+	 * @param nameId
+	 * @return
+	 */
 	public int searchEnemyPos(String nameId){
 		int pos = -1;
 		boolean found = false;
@@ -80,6 +101,10 @@ public class Level {
 		return pos;
 	}
 
+	/**
+	 * @param nameId
+	 * @return
+	 */
 	public int searchTreasurePos(String nameId){
 		int pos = -1;
 		boolean found = false;
@@ -94,6 +119,9 @@ public class Level {
 		return pos;
 	}
 
+	/**
+	 * @return
+	 */
 	public String informTreasuresAndEnemies(){
 		String msj = "----------Tesoros----------\n";
 		for(int i = 0; i < treasureAmmount; i++){
@@ -110,6 +138,10 @@ public class Level {
 		return msj;
 	}
 
+	/**
+	 * @param name
+	 * @return
+	 */
 	public int informQuantityOfTreasure(String name){
 		int quantity = 0;
 		for(int i = 0; i < treasureAmmount; i++){
@@ -122,6 +154,10 @@ public class Level {
 		return quantity;
 	}
 
+	/**
+	 * @param type
+	 * @return
+	 */
 	public int informQuantityOfEnemyType(int type){
 		int ammount = 0;
 		EnemyType enemyType;
@@ -141,6 +177,9 @@ public class Level {
 		return ammount;
 	}
 	
+	/**
+	 * @return
+	 */
 	public String[] informEnemyThatGivesMostScore(){
 		String[] enemy = new String[2];
 		double mostPoints = 0;
@@ -156,6 +195,9 @@ public class Level {
 		return enemy;
 	}
 
+	/**
+	 * @return
+	 */
 	public int informConsonantsOfEnemies(){
 		int consonants = 0;
 		String name;
@@ -177,10 +219,16 @@ public class Level {
 	}
 
 
+	/**
+	 * @return
+	 */
 	public Treasure[] getTreasures() {
 		return treasures;
 	}
 
+	/**
+	 * @return
+	 */
 	public int getLevelID() {
 		return this.levelID;
 	}
@@ -193,11 +241,17 @@ public class Level {
 		this.levelID = levelID;
 	}
 
+	/**
+	 * @return
+	 */
 	public double getRequiredPointsForNextLevel() {
 		return requiredScoreForNextLevel;
 	}
 
 
+	/**
+	 * @return
+	 */
 	public int getTreasureAmmount() {
 		return this.treasureAmmount;
 	}
@@ -210,6 +264,9 @@ public class Level {
 		this.treasureAmmount = treasureAmmount;
 	}
 
+	/**
+	 * @return
+	 */
 	public String getDifficultyLevel() {
 		return this.difficultyLevel;
 	}

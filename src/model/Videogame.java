@@ -25,8 +25,9 @@ public class Videogame {
 	}
 
 	/**
-	 * 
-	 * @param player
+	 * @param nickname
+	 * @param name
+	 * @return
 	 */
 	public String registerPlayer(String nickname, String name) {
 		String msj = "Capacidad maxima de jugadores alcanzada.";
@@ -45,6 +46,14 @@ public class Videogame {
 		return msj;
 	}
 	
+	/**
+	 * @param levelPos
+	 * @param nameId
+	 * @param type
+	 * @param lostPoints
+	 * @param winPoints
+	 * @return
+	 */
 	public String registerEnemyToLevel(int levelPos, String nameId, int type, double lostPoints, double winPoints){
 		String msj = "Capacidad maxima de enemigos alcanzada";
 		if(levelPos > 9 | levelPos < 0){
@@ -57,6 +66,13 @@ public class Videogame {
 		return msj;
 	}
 
+	/**
+	 * @param levelPos
+	 * @param nameId
+	 * @param url
+	 * @param scoreGranted
+	 * @return
+	 */
 	public String registerTreasureToLevel(int levelPos, String nameId, String url, double scoreGranted){
 		String msj = "Capacidad maxima de tesoros alcanzada";
 		if(levelPos > 9 | levelPos < 0){
@@ -69,6 +85,11 @@ public class Videogame {
 		return msj;
 	}
 
+	/**
+	 * @param nickname
+	 * @param score
+	 * @return
+	 */
 	public String modifyScoreOfPlayer(String nickname, double score){
 		String msj = "Puntaje modificado con exito";
 		int userPos = searchNicknamePos(nickname);
@@ -79,6 +100,10 @@ public class Videogame {
 		return msj;
 	}
 
+	/**
+	 * @param nickname
+	 * @return
+	 */
 	public String levelUpPlayer(String nickname){
 		String msj = "";
 		int userPos = searchNicknamePos(nickname);
@@ -99,16 +124,30 @@ public class Videogame {
 	}
 
 
+	/**
+	 * @param levelPos
+	 * @param nameId
+	 * @return
+	 */
 	public int searchEnemyPos(int levelPos, String nameId){
 		int pos = levels[levelPos].searchEnemyPos(nameId);
 		return pos;
 	}
 
+	/**
+	 * @param levelPos
+	 * @param nameId
+	 * @return
+	 */
 	public int searchTreasurePos(int levelPos, String nameId){
 		int pos = levels[levelPos].searchTreasurePos(nameId);
 		return pos;
 	}
 	
+	/**
+	 * @param levelPos
+	 * @return
+	 */
 	public String informTreasuresAndEnemies(int levelPos){
 		String msj = "";
 		if(levelPos > 9 | levelPos < 0){
@@ -118,6 +157,10 @@ public class Videogame {
 		return msj;
 	}
 
+	/**
+	 * @param name
+	 * @return
+	 */
 	public String informQuantityOfTreasure(String name){
 		name = name.toLowerCase();
 		String msj = "";
@@ -129,6 +172,10 @@ public class Videogame {
 		return msj;
 	}
 
+	/**
+	 * @param type
+	 * @return
+	 */
 	public String informQuantityOfEnemyType(int type){
 		String msj = "";
 		int enemyTypeAmmount = 0;
@@ -142,6 +189,9 @@ public class Videogame {
 		return msj;
 	}
 
+	/**
+	 * @return
+	 */
 	public String informMostRepeatedTreasure(){
 		String msj = "this is dumb";
 		String[] names = new String[50];
@@ -188,6 +238,9 @@ public class Videogame {
 		return msj;
 	}
 
+	/**
+	 * @return
+	 */
 	public String informEnemyThatGivesMostScore(){
 		String msj = "";
 		String[] enemies = new String[MAX_LEVELS];
@@ -211,6 +264,9 @@ public class Videogame {
 		return msj;
 	}
 
+	/**
+	 * @return
+	 */
 	public String informConsonantsOfEnemies(){
 		String msj = "";
 		int consonants = 0;
@@ -221,6 +277,9 @@ public class Videogame {
 		return msj;
 	}
 
+	/**
+	 * @return
+	 */
 	public String informTopFivePlayers(){
 		String msj = "Top | Nickname | Score\n";
 		String[] names = new String[5];
@@ -259,6 +318,10 @@ public class Videogame {
 		return msj;
 	}
 
+	/**
+	 * @param nickname
+	 * @return
+	 */
 	public int searchNicknamePos(String nickname){
 		int pos = -1;
 		boolean found = false;

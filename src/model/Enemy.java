@@ -13,6 +13,14 @@ public class Enemy {
     private int YPosition;
     private Random random;
 
+    /**
+     * @param VERTICAL_RESOLUTION
+     * @param HORIZONTAL_RESOLUTION
+     * @param nameID
+     * @param type
+     * @param lostPoints
+     * @param winPoints
+     */
     public Enemy(int VERTICAL_RESOLUTION, int HORIZONTAL_RESOLUTION, String nameID, int type, double lostPoints, double winPoints){
         this.random = new Random();
         this.VERTICAL_RESOLUTION = VERTICAL_RESOLUTION;

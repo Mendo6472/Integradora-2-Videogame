@@ -13,9 +13,9 @@ public class Treasure {
 	private Random random;
 
 	/**
-	 * 
+	 * @param VERTICAL_RESOLUTION
+	 * @param HORIZONTAL_RESOLUTION
 	 * @param name
-	 * @param levelID
 	 * @param imageURL
 	 * @param scoreGranted
 	 */
